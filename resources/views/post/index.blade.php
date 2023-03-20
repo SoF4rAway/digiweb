@@ -12,7 +12,7 @@
 
         <!-- TOMBOL TAMBAH DATA -->
         <div class="pb-3">
-            <a href='' class="btn btn-primary">+ Tambah Data</a>
+            <a href='{{url()}}' class="btn btn-primary">+ Tambah Data</a>
         </div>
 
         <table class="table table-striped">
