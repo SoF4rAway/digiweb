@@ -13,7 +13,7 @@ class homeController extends Controller
     public function index()
     {
         $posts = posts::latest()->get();
-        return view('welcome', compact($posts));
+        return view('welcome', ['posts' => $posts]);
     }
 
     /**

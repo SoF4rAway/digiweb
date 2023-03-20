@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,5 +14,11 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+//Main Landing Page
 Route::get('/', [\App\Http\Controllers\homeController::class, 'index'])->name('home');
+
+//Admin Route
+Route::resource('admin', AdminController::class);
+
+//Post Route
+Route::resource('post', PostController::class);
