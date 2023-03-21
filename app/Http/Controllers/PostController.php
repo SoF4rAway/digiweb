@@ -12,13 +12,21 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('admin.create');
+        return view('post.index');
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create(Request $request)
+    public function create()
+    {
+        return view('post.create');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
     {
         $validatedData = $request->validate([
             'title' => 'required|max:255',
@@ -33,14 +41,6 @@ class PostController extends Controller
         $post->save();
 
         return redirect()->route('admin.index')->with('success', 'Post created successfully!');
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
     }
 
     /**

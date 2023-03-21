@@ -12,7 +12,7 @@
 
         <!-- TOMBOL TAMBAH DATA -->
         <div class="pb-3">
-            <a href='' class="btn btn-primary">+ Tambah Data</a>
+            <a href='{{url('post/create')}}' class="btn btn-primary">+ Tambah Data</a>
         </div>
 
         <table class="table table-striped">
@@ -30,12 +30,12 @@
             </thead>
             <tbody>
             <tr>
-                <td>1</td>
-                <td>1001</td>
-                <td>Ani</td>
-                <td>Ilmu Komputer</td>
-                <td>Ilmu Komputer</td>
-                <td>Ilmu Komputer</td>
+                <td>tes</td>
+                <td>tes</td>
+                <td>tes</td>
+                <td>tes</td>
+                <td>tes</td>
+                <td>tes</td>
                 <td>
                     <a href='' class="btn btn-warning btn-sm">Edit</a>
                     <a href='' class="btn btn-danger btn-sm">Del</a>
