@@ -64,15 +64,17 @@
             @foreach($posts as $post)
                 <div class="col-md-4">
                     <div class="card mb-4 shadow-sm">
-                        <img class="card-img-top" src="{{ $post->image_url }}" alt="{{ $post->title }}">
+                        @if ($post->image)
+                            <img class="card-img-top" src="{{ asset('storage/' . $post->image) }}" class="card-img-top" alt="{{ $post->title }}">
+                        @endif
                         <div class="card-body">
                             <h5 class="card-title">{{ $post->title }}</h5>
                             <p class="card-text">{{ $post->excerpt }}</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <a href="{{ route('posts.show', $post) }}" class="btn btn-sm btn-outline-secondary">View</a>
+                                   <a href="{{ route('admin.posts.show', $post) }}" class="btn btn-sm btn-outline-secondary">View</a>
                                 </div>
-                                <small class="text-muted">{{ $post->created_at->diffForHumans() }}</small>
+                                    <small class="text-muted">{{ $post->created_at->diffForHumans() }}</small>
                             </div>
                         </div>
                     </div>
