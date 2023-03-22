@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\PostController;
+use App\Http\Controllers\Admin\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,4 +21,6 @@ Route::get('/', [\App\Http\Controllers\homeController::class, 'index'])->name('h
 Route::resource('admin', AdminController::class);
 
 //Post Route
-Route::resource('post', PostController::class);
+Route::prefix('admin')->name('admin.')->group(function (){
+    Route::resource('posts',PostController::class);
+});

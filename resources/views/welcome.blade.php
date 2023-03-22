@@ -70,9 +70,9 @@
                             <p class="card-text">{{ $post->excerpt }}</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <a href="{{ route('posts.show', $post) }}" class="btn btn-sm btn-outline-secondary">View</a>
+{{--                                    <a href="{{ route('posts.show', $post) }}" class="btn btn-sm btn-outline-secondary">View</a>--}}
                                 </div>
-                                <small class="text-muted">{{ $post->created_at->diffForHumans() }}</small>
+{{--                                <small class="text-muted">{{ $post->created_at->diffForHumans() }}</small>--}}
                             </div>
                         </div>
                     </div>

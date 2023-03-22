@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\posts;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('post.index');
+        //$posts = posts::latest()->get();
+        //return view('admin.post.index', ['posts' => $posts]);
     }
 
     /**
@@ -20,7 +22,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('post.create');
+        return view('admin.post.create');
     }
 
     /**
@@ -28,19 +30,24 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
+
+        $request->validate([
             'title' => 'required|max:255',
             'excerpt' => 'required',
             'body' => 'required',
+        ],[
+            'title.required' => 'Judul Wajib Diisi',
+            'excerpt.required' => 'Ringkasan Wajib Diisi',
+            'body.required' => 'Isi Berita Wajib Diisi',
         ]);
+        $data =[
+            'title' => $request->title,
+            'excerpt' => $request->excerpt,
+            'body' => $request->body,
 
-        $post = new posts();
-        $post->title = $validatedData['title'];
-        $post->excerpt = $validatedData['excerpt'];
-        $post->body = $validatedData['body'];
-        $post->save();
-
-        return redirect()->route('admin.index')->with('success', 'Post created successfully!');
+        ];
+        posts::create($data);
+        return redirect()->to('admin')->with('success','Berita Berhasil Ditambahkan');
     }
 
     /**

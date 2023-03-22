@@ -14,25 +14,25 @@
         </div>
     @endif
     <!-- START FORM -->
-    <form action='{{url('post')}}' method='post'>
+    <form action='{{url('admin/posts')}}' method='post'>
         @csrf
         <div class="my-3 p-3 bg-body rounded shadow-sm">
             <div class="mb-3 row">
-                <label for="nim" class="col-sm-2 col-form-label">Judul</label>
+                <label for="nama" class="col-sm-2 col-form-label">Judul</label>
                 <div class="col-sm-10">
-                    <input type="number" class="form-control" name='title' value="{{Session::get('title')}}" id="nim">
+                    <input type="text" class="form-control" name='title' id="title">
                 </div>
             </div>
             <div class="mb-3 row">
                 <label for="nama" class="col-sm-2 col-form-label">Ringkasan</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" name='excerpt' value="{{Session::get('excerpt')}}" id="nama">
+                    <input type="text" class="form-control" name='excerpt' id="excerpt">
                 </div>
             </div>
             <div class="mb-3 row">
                 <label for="jurusan" class="col-sm-2 col-form-label">Isi</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" name='body' value="{{Session::get('body')}}" id="jurusan">
+                    <input type="text" class="form-control" name='body' id="body">
                 </div>
             </div>
             <div class="mb-3 row">
