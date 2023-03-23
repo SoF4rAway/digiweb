@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\homeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,10 +16,11 @@ use App\Http\Controllers\Admin\PostController;
 |
 */
 //Main Landing Page
-Route::get('/', [\App\Http\Controllers\homeController::class, 'index'])->name('home');
+Route::get('/', [homeController::class, 'index'])->name('home');
 
 //Admin Route
 Route::resource('admin', AdminController::class);
+Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 
 //Post Route
 Route::prefix('admin')->name('admin.')->group(function (){

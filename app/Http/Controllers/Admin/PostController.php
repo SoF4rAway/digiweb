@@ -13,6 +13,7 @@ class PostController extends Controller
      */
     public function index()
     {
+        return 'hi';
         //$posts = posts::latest()->get();
         //return view('admin.post.index', ['posts' => $posts]);
     }
@@ -58,7 +59,6 @@ class PostController extends Controller
         ];
 
         posts::create($data);
-
         return redirect()->route('admin')->with('success', 'Berita Berhasil Ditambahkan');
     }
 
