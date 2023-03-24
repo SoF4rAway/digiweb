@@ -29,7 +29,7 @@ class homeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
@@ -37,7 +37,7 @@ class homeController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return 'hi' . $id;
     }
 
     /**

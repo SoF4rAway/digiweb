@@ -17,6 +17,7 @@ use App\Http\Controllers\homeController;
 */
 //Main Landing Page
 Route::get('/', [homeController::class, 'index'])->name('home');
+Route::get('/show',[homeController::class,'show'])->name('show');
 
 //Admin Route
 Route::resource('admin', AdminController::class);
